@@ -20,7 +20,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-This software uses an externally loaded Showdown converter which is not a part of this repository and is licensed under following conditions.
+This software uses an externally loaded Showdown converter which is not a part
+of this repository and is licensed under following conditions.
 
 Showdown Copyright (c) 2007, John Fraser
 <http://www.attacklab.net/>
