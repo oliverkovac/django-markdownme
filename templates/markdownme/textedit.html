@@ -1,0 +1,57 @@
+<div class="markdownme-widget">
+    <div class="markdownme-toolbar">
+        <a title="Bold (Ctrl + B)" class="markdownme-toolbar-button-bold fa fa-bold" aria-hidden="true"></a>
+        <a title="Italic (Ctrl + I)" class="markdownme-toolbar-button-italic fa fa-italic" aria-hidden="true"></a>
+        <a title="List" class="markdownme-toolbar-button-unordered-list fa fa-list-ul" aria-hidden="true"></a>
+        <a title="Ordered list" class="markdownme-toolbar-button-ordered-list fa fa-list-ol" aria-hidden="true"></a>
+        <a title="Link" class="markdownme-toolbar-button-link fa fa-link" aria-hidden="true"></a>
+        <span class="separator">|</span>
+        <a title="Preview" class="markdownme-toolbar-button-preview fa fa-eye"></a>
+        {% if history_allowed %}
+        <a title="History" class="markdownme-toolbar-button-history fa fa-clock-o"></a>
+        <select class="markdownme-toolbar-history-select markdownme-hidden"></select>
+        <a title="Revert" class="markdownme-toolbar-button-revert fa fa-history markdownme-hidden"></a>
+        {% endif %}
+    </div>
+    
+    <textarea class="markdownme-textarea markdownme-box" {{ attrs|safe }}>{{ value }}</textarea>
+    
+    <div class="{% if file_upload_allowed %}markdownme-full-box{% else %}markdownme-box{% endif %} markdownme-preview markdownme-hidden">
+        {% if iframe_preview %}
+        <iframe class="{% if file_upload_allowed %}markdownme-full-box{% else %}markdownme-box{% endif %} markdownme-preview-iframe"></iframe>
+        {% else %}
+        <div class="{% if file_upload_allowed %}markdownme-full-box{% else %}markdownme-box{% endif %} markdownme-preview-div"></div>
+        {% endif %}
+    </div>
+    
+    {% if history_allowed %}
+    <div class="{% if file_upload_allowed %}markdownme-full-box{% else %}markdownme-box{% endif %} markdownme-history markdownme-hidden">
+        {% if two_pane_history %}
+        <div class="markdownme-history-current"></div>
+        <div class="markdownme-history-previous"></div>
+        {% else %}
+        <div class="markdownme-history-previous" style="width:100%;"></div>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    {% if file_upload_allowed %}
+    <div class="dropzone"></div>
+    {% endif %}
+    
+    <script>
+    markdownME = {};
+    markdownME.uploadUrl = "{% url 'dropzone_upload' %}";
+    markdownME.deleteUrl = "{% url 'dropzone_delete' %}";
+    markdownME.fileListUrl = "{% url 'dropzone_filelist' %}";
+    markdownME.historyUrl= "{% url 'markdown_history' %}";
+    markdownME.mediaRoot = "{{ markdownme_media_root }}";
+    markdownME.maxFilesize = {{ max_filesize }};
+    markdownME.fileUploadAllowed = {{ file_upload_allowed|lower }};
+    markdownME.historyAllowed = {{ history_allowed|lower }};
+    markdownME.allowedFileTypes = "{{ allowed_file_types }}";
+    markdownME.safePreview = {{ safe_preview|lower }};
+    markdownME.iframePreview = {{ iframe_preview|lower }};
+    markdownME.twoPaneHistory = {{ two_pane_history|lower }};
+    </script>
+</div>
