@@ -1,0 +1,146 @@
+.markdownme-widget {
+    float: left;
+    position: relative;
+    clear: none;
+    width: 100%;
+    border: 2px solid gray;
+}
+
+.markdownme-toolbar {
+    position: relative;
+    font-size: 120%;
+    padding: 0 5px;
+    background-color: #f1f1f1;
+    vertical-align: middle;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.markdownme-toolbar:before {
+    margin-bottom: 5px;
+}
+
+.markdownme-toolbar:after {
+    margin-top: 5px;
+}
+
+.markdownme-toolbar:after, .markdownme-toolbar:before {
+    display: block;
+    content: ' ';
+    height: 1px;
+}
+
+.markdownme-toolbar a {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    text-decoration: none!important;
+    border: 1px solid transparent;
+    opacity: 0.8;
+}
+
+a.markdownme-toolbar-button-selected {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #cccccc;
+}
+
+.separator {
+    display: inline-block;
+    width: 0;
+    color: transparent;
+    margin: 0 6px;
+    border-left: 1px solid gray;
+}
+
+.markdownme-toolbar a:hover {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.markdownme-box {
+    width: 100%;
+    height: 400px;            
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    border-style: none;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.markdownme-full-box {
+    width: 100%;
+    height: 592px;            
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    border-style: none;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.markdownme-textarea {
+    padding: 8px 0 0 8px;
+    font-family: monospace;
+}
+
+.markdownme-history-current, .markdownme-history-previous {
+    float: left;
+    width: 50%;
+    height: 592px;
+    display: inline-block;
+    padding: 7px 0 0 8px;
+    margin: 0px;
+    overflow-y:auto;
+    border-style: none;
+    vertical-align: top;
+    font-family: monospace;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.markdownme-history-current {
+    border-right: 2px solid #f1f1f1;
+}
+
+.markdownme-preview-iframe, .markdownme-preview-div {
+    overflow-y: auto;
+} 
+
+.markdownme-preview-div {
+    padding: 0 0 0 8px;
+}
+
+.markdownme-hidden {
+    display: none!important;
+}
+
+.markdownme-toolbar-history-select {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
+
+.dropzone {
+    padding: 10px;
+    border-width: 2px 0 0 0;
+    border-color: gray;
+}
+
+.dz-max-files-reached {
+    border-color: #ee6666;
+    border-width: 4px;
+}
